@@ -1,0 +1,17 @@
+{
+  "name": "youtube",
+  "version": "1.0.0",
+  "description": "youtube app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "you",
+    "tube",
+    "app",
+    "clone"
+  ],
+  "author": "aman rana",
+  "license": "ISC"
+}

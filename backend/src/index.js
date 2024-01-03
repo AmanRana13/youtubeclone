@@ -11,10 +11,7 @@ connectDB()
     app.listen(process.env.PORT || 3000, () => {
       console.log("App connected");
     });
-    app.error(process.env.PORT || 3000, () => {
-      console.log("App connection error");
-    });
   })
   .catch((e) => {
-    console.log("MogoDB connection fail");
+    console.log("MogoDB connection fail", e);
   });

@@ -3,8 +3,8 @@
  * @param {*} fn
  * @returns
  */
-const asyncHandler = (fn) => async (error, req, res, next) => {
-  Promise.resolve(fn(error, req, res, next)).catch((err) => next(err));
+export const asyncHandler = (fn) => async (req, res, next) => {
+  return Promise.resolve(fn(req, res, next)).catch((err) => next(err));
 };
 
 /**
@@ -12,9 +12,9 @@ const asyncHandler = (fn) => async (error, req, res, next) => {
  * @param {*} fn
  * @returns
  */
-const asyncHandler2 = (fn) => async (error, req, res, next) => {
+const asyncHandler2 = (fn) => async (req, res, next) => {
   try {
-    await fn(error, req, res, next);
+    await fn(req, res, next);
   } catch (err) {
     res.status(err.code || 500).json({
       success: false,

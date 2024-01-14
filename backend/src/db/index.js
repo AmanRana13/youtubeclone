@@ -7,9 +7,9 @@ const connectDB = async () => {
     const mogooseInstance = await mongoose.connect(
       `${process.env.MOGODB_URL}/${DB_NAME}`
     );
-    console.log("mogooseInstance", mogooseInstance);
   } catch (error) {
-    console.log(error);
+    console.log("[connectDB Error]", error);
+    throw error;
   }
 };
 
